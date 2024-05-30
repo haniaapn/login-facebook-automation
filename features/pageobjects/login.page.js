@@ -1,8 +1,8 @@
-import Page from '/Users/haniapn/Documents/login-facebook-automation/features/pageobjects/page.js'
 
-class LoginPage extends Page{
-    open() {
-        super.open('https://id-id.facebook.com/')
+class LoginPage{
+
+    async open() {
+        await browser.url('https://id-id.facebook.com/login');
     }
     get emailInput(){
         return $('#email');
@@ -11,7 +11,7 @@ class LoginPage extends Page{
         return $('#pass');
     }
     get loginButton(){
-        return $('#u_0_9_Sv');
+        return $('#loginbutton');
     }
     get homepageElement(){
         return $('svg[aria-label="Profil Anda"]')
@@ -21,6 +21,6 @@ class LoginPage extends Page{
         return $('div[class="_9ay7"]')
     }
 
-
-
 }
+
+module.exports = new LoginPage()

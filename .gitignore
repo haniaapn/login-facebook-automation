@@ -1,2 +1,3 @@
 node_modules
-login.feature
+.tmp
+cucumber-report
