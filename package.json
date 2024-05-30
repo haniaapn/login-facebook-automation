@@ -4,11 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "wdio && node generate-report.js && npm run open-report",
+    "wdio": "wdio run ./wdio.conf.js",
+    "generate-report": "node generate-report.js",
+    "open-report": "open ./cucumber-report/index.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wdio/cli": "^8.38.1"
+    "chromedriver": "^125.0.2",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "@babel/register": "^7.24.6",
+    "@wdio/cli": "^8.38.1",
+    "@wdio/cucumber-framework": "^8.38.0",
+    "@wdio/local-runner": "^8.38.0",
+    "@wdio/spec-reporter": "^8.38.0",
+    "chromedriver": "^125.0.2",
+    "cucumber-html-reporter": "^6.0.0",
+    "multiple-cucumber-html-reporter": "^3.6.2",
+    "wdio-chromedriver-service": "^8.1.1",
+    "wdio-cucumberjs-json-reporter": "^5.2.1",
+    "webdriverio": "^8.38.0"
   }
 }
